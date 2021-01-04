@@ -1,3 +1,4 @@
+/*
 package com.mycom.clone;
 
 import static org.junit.Assert.*;
@@ -96,11 +97,13 @@ public class Person implements Cloneable {
 		return str;
 	}
 
-	/**
+	*/
+/**
 	 * 简单属性
 	 * 
 	 * @throws Exception
-	 */
+	 *//*
+
 	@Test
 	public void testShallowCopySimple() throws Exception {
 		Person p1 = new Person();
@@ -114,11 +117,13 @@ public class Person implements Cloneable {
 		System.out.println("p2=" + p2);// p2=Person [name=Jacky, age=31]
 	}
 
-	/**
+	*/
+/**
 	 * 引用属性
 	 * 
 	 * @throws Exception
-	 */
+	 *//*
+
 	@Test
 	public void testShallowCopyFixed() throws Exception {
 		Address address = new Address();
@@ -137,4 +142,4 @@ public class Person implements Cloneable {
 		System.out.println("p1=" + p1);
 		System.out.println("p2=" + p2);
 	}
-}
+}*/
