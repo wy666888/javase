@@ -15,6 +15,8 @@ public class OptionalTest {
         System.out.println(ceshi.isPresent());
         //不输出
         //如果存在值，则使用值执行给定操作，否则不执行任何操作。
+        //传入consumer
+        //void ifPresent​(Consumer<? super T> action) 如果存在值，则使用值执行给定操作，否则不执行任何操作
         ceshi.ifPresent(v->System.out.println(111));
         //如果存在值，则返回该值，否则抛出 NoSuchElementException
         //java.util.NoSuchElementException: No value present
