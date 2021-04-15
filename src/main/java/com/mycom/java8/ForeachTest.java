@@ -2,7 +2,9 @@ package com.mycom.java8;
 
 import org.junit.jupiter.api.Test;
 
+import java.math.BigDecimal;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class ForeachTest {
     @Test
@@ -53,6 +55,12 @@ public class ForeachTest {
              ) {
             System.out.println(s);
         }
+        remove(list);
+        System.out.println(list);
+
+    }
+    void remove(List list){
+        list.remove(0);
     }
     @Test
     void loopListJava8(){
@@ -67,5 +75,48 @@ public class ForeachTest {
        list.forEach(System.out::println);
         System.out.println();
        list.stream().filter(Objects::nonNull).forEach(System.out::println);
+    }
+    @Test
+    void listTest(){
+        List<Long> list = new ArrayList<>();
+        list.add(1L);
+        list.add(3L);
+        list.add(2L);
+
+        Long s = 2L;
+        System.out.println(list.contains(s));
+        list.stream().sorted((v1,v2)-> BigDecimal.valueOf(v1).compareTo(BigDecimal.valueOf(v2))).collect(Collectors.toList()).forEach(System.out::println);
+        System.out.println("=====");
+
+        list.stream().sorted((v1,v2)-> BigDecimal.valueOf(v2).compareTo(BigDecimal.valueOf(v1))).collect(Collectors.toList()).forEach(System.out::println);
+        System.out.println("=====");
+        List<Long> list2 = new ArrayList<>();
+        list2.addAll(list);
+        System.out.println(list2);
+        System.out.println("=====");
+        list = null;
+        System.out.println(list2);
+
+
+    }
+    @Test
+    void mapTest(){
+        Map<Long,String> map = new HashMap<>();
+        map.put(1L,"111");
+        map.put(2L,"222");
+        map.put(3L,"333");
+
+        //true：key的比较使用的是equals进行的，注意类型的转换操作
+        Long s = 2L;
+        System.out.println(map.containsKey(s));
+
+        Map<Boolean,String> map2 = new HashMap<>();
+        map2.put(true,"111");
+        map2.put(false,"222");
+
+        //true：key的比较使用的是equals进行的，注意类型的转换操作
+        Boolean flag = true;
+        System.out.println(map2.containsKey(flag));
+
     }
 }

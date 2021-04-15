@@ -1,5 +1,7 @@
 package com.mycom.java8;
 
+import org.junit.jupiter.api.Test;
+
 public class Employee {
     private String name;
     private Integer age;
@@ -45,5 +47,15 @@ public class Employee {
                 ", age=" + age +
                 ", salary=" + salary +
                 '}';
+    }
+    public static void changeUser(Employee u){
+        u.setName("1111");
+    }
+    @Test
+    public void test07() {
+        Employee u = new Employee();
+        changeUser(u);
+        System.out.println(u);
+
     }
 }

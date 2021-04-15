@@ -149,6 +149,12 @@ public class LambdaTest {
         }
         return result;
     }
+    @Test
+    void test08() {
+        List<String> list1 = Arrays.asList("文学","小说","历史","言情","科幻","悬疑");
+        String str = list1.stream().collect(Collectors.joining());
+        System.out.println(str);
+    }
 
 
 }
