@@ -82,10 +82,13 @@ public class ForeachTest {
         list.add(1L);
         list.add(3L);
         list.add(2L);
+        list.add(null);
+
 
         Long s = 2L;
         System.out.println(list.contains(s));
         list.stream().sorted((v1,v2)-> BigDecimal.valueOf(v1).compareTo(BigDecimal.valueOf(v2))).collect(Collectors.toList()).forEach(System.out::println);
+        list.stream().sorted(Long::compareTo).collect(Collectors.toList()).forEach(System.out::println);
         System.out.println("=====");
 
         list.stream().sorted((v1,v2)-> BigDecimal.valueOf(v2).compareTo(BigDecimal.valueOf(v1))).collect(Collectors.toList()).forEach(System.out::println);
